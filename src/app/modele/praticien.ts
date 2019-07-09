@@ -3,11 +3,13 @@ import {User} from './user';
 import {Rdv} from './rdv';
 import {Specialite} from './specialite';
 import {Motif} from './motif';
+import {PraticienSpecialite} from './praticien-specialite';
 
 export class Praticien extends User {
 
-  constructor(private _prenom?: string, private _nom?: string, private _drdv?: Rdv[], private _specialites?: Specialite[], private _adresses?: Adresse[], private _motifs?: Motif[]) {
-  super();
+  constructor(private _prenom?: string, private _nom?: string, private _drdv?: Rdv[], private _praticienSpecialites?: PraticienSpecialite[],
+              private _adresses?: Adresse[], private _motifs?: Motif[]) {
+    super();
   }
 
   get prenom(): string {
@@ -34,12 +36,12 @@ export class Praticien extends User {
     this._drdv = value;
   }
 
-  get specialites(): Specialite[] {
-    return this._specialites;
+  get praticienSpecialites(): PraticienSpecialite[] {
+    return this._praticienSpecialites;
   }
 
-  set specialites(value: Specialite[]) {
-    this._specialites = value;
+  set praticienSpecialites(value: PraticienSpecialite[]) {
+    this._praticienSpecialites = value;
   }
 
   get adresses(): Adresse[] {
