@@ -3,8 +3,7 @@ import {Rdv} from './rdv';
 
 export class Patient extends User{
   constructor(private _prenom?: string, private _nom?: string, private _prdv?: Rdv[]) {
-    super(this.login, this.password);
-
+    super();
   }
 
   get prenom(): string {
