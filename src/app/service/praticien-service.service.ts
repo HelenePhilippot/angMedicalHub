@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 })
 export class PraticienServiceService {
 
-  private url = 'http://localhost:8080/boot/rest/praticien';
+  private url = 'http://localhost:8080/boot/rest/praticien/specialite';
 
   private httpHeaders: HttpHeaders;
 
