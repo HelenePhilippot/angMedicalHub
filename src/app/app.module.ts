@@ -7,11 +7,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {routes} from './routes';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePatientComponent
+    HomePatientComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule
