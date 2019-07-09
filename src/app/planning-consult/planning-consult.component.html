@@ -1,109 +1,26 @@
-<div class="dl-layout-container dl-layout-spacing-xs-0">
-  <div class="dl-layout-item dl-layout-size-xs-12 dl-layout-size-sm-12"><label
-    class="dl-text dl-text-body-subtitle dl-step-label">Sélectionnez votre rendez-vous</label></div>
-  <div class="dl-step-right-container dl-layout-item dl-layout-size-xs-12 dl-layout-size-sm-12">
-    <div>
-      <div class="booking-availabilities" style="position: relative;">
-        <div style="overflow: visible; width: 0px;">
-          <div class="dl-desktop-availabilities dl-desktop-availabilities-flat" style="width: 193px;">
-            <div class="dl-desktop-availabilities-inner">
-              <div class="dl-desktop-availabilities-days">
-                <div class="availabilities-pagination availabilities-pagination-disabled">
-                  <svg class="availabilities-pagination-arrow" width="10" height="16" viewBox="0 0 10 16">
-                    <path
-                      d="M6.7.5c.2-.3.5-.5 1-.5s.8.2 1.2.5c.5.6.5 1.4 0 2.2L3.5 8 9 13.5c.6.8.6 1.5 0 2.2-.4.3-.8.4-1.3.4-.4 0-.8 0-1-.3L.4 9C0 9 0 8.6 0 8c0-.4 0-.8.4-1L6.7.5z"></path>
-                  </svg>
-                </div>
-                <div class="availabilities-day">
-                  <div class="availabilities-day-title">
-                    <div class="availabilities-day-name">lun.</div>
-                    <div class="availabilities-day-date">8 juil.</div>
-                  </div>
-                  <div class="availabilities-slots">
-                    <div class="availabilities-empty-slot">
-                      <div class="availabilities-empty-slot-dash"></div>
-                    </div>
-                    <div class="availabilities-empty-slot">
-                      <div class="availabilities-empty-slot-dash"></div>
-                    </div>
-                    <div class="availabilities-empty-slot">
-                      <div class="availabilities-empty-slot-dash"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="availabilities-day">
-                  <div class="availabilities-day-title">
-                    <div class="availabilities-day-name">mar.</div>
-                    <div class="availabilities-day-date">9 juil.</div>
-                  </div>
-                  <div class="availabilities-slots">
-                    <div class="availabilities-empty-slot">
-                      <div class="availabilities-empty-slot-dash"></div>
-                    </div>
-                    <div class="availabilities-empty-slot">
-                      <div class="availabilities-empty-slot-dash"></div>
-                    </div>
-                    <div class="availabilities-empty-slot">
-                      <div class="availabilities-empty-slot-dash"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="availabilities-day">
-                  <div class="availabilities-day-title">
-                    <div class="availabilities-day-name">mer.</div>
-                    <div class="availabilities-day-date">10 juil.</div>
-                  </div>
-                  <div class="availabilities-slots">
-                    <div class="availabilities-empty-slot">
-                      <div class="availabilities-empty-slot-dash"></div>
-                    </div>
-                    <div class="availabilities-empty-slot">
-                      <div class="availabilities-empty-slot-dash"></div>
-                    </div>
-                    <div class="availabilities-empty-slot">
-                      <div class="availabilities-empty-slot-dash"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="availabilities-pagination">
-                  <svg class="availabilities-pagination-arrow" width="10" height="16" viewBox="0 0 10 16">
-                    <path
-                      d="M2.7.5c-.2-.3-.5-.5-1-.5S1 .2.5.5C-.2 1-.2 2 .5 2.7L5.7 8 .5 13.5c-.7.8-.7 1.5 0 2.2.3.3.7.4 1.2.4.4 0 .8 0 1-.3L9 9c.3-.2.4-.5.4-1 0-.4 0-.8-.4-1L2.7.5z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="dl-desktop-availabilities-header-border"></div>
-              <div>
-                <div class="dl-desktop-availabilities-overlay transition-opacity-enter-done">
-                  <div class="availabilities-message">
-                    <div class="availabilities-next-slot">
-                      <div class="availabilities-next-slot-next-availability">
-                        <div>Prochain RDV le 23 juillet 2019
-                        </div>
-                        <div class="availabilities-next-slot-icon">
-                          <svg width="10" height="16" viewBox="0 0 10 16">
-                            <path
-                              d="M2.7.5c-.2-.3-.5-.5-1-.5S1 .2.5.5C-.2 1-.2 2 .5 2.7L5.7 8 .5 13.5c-.7.8-.7 1.5 0 2.2.3.3.7.4 1.2.4.4 0 .8 0 1-.3L9 9c.3-.2.4-.5.4-1 0-.4 0-.8-.4-1L2.7.5z"></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div></div>
-            </div>
-          </div>
-        </div>
-        <div class="booking-availabilities-substitution-block"></div>
-        <span><div></div></span>
-        <div class="resize-triggers">
-          <div class="expand-trigger">
-            <div style="width: 194px; height: 217px;"></div>
-          </div>
-          <div class="contract-trigger"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<h2>Planning</h2>
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Lundi</th>
+      <th>Mardi</th>
+      <th>Mercredi</th>
+      <th>Jeudi</th>
+      <th>Vendredi</th>
+      <th>Samedi</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let i of tabDispo">
+      <td>{{i}}</td>
+      <td>{{i}}</td>
+      <td>{{i}}</td>
+      <td>{{i}}</td>
+      <td>{{i}}</td>
+      <td>{{i}}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
