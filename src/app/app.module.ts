@@ -7,11 +7,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {routes} from './routes';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import { HeleneComponent } from './helene/helene.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePatientComponent
+    HomePatientComponent,
+    HeleneComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule
