@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Praticien} from '../modele/praticien';
 import {PraticienServiceService} from '../service/praticien-service.service';
 
@@ -11,7 +11,8 @@ export class HomePatientComponent implements OnInit {
 
   private praticiens: Praticien[] = [];
 
-  constructor(private praticienService: PraticienServiceService) { }
+  constructor(private praticienService: PraticienServiceService) {
+  }
 
   ngOnInit() {
     this.list();
@@ -19,6 +20,9 @@ export class HomePatientComponent implements OnInit {
   }
 
   public list() {
-    this.praticienService.list().subscribe(res => {this.praticiens = res;})
+    this.praticienService.list().subscribe(res => {
+      console.log(res);
+      this.praticiens = res;
+    });
   }
 }

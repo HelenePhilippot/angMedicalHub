@@ -8,9 +8,8 @@ import {routes} from './routes';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
-
-
-
+import { HeleneComponent } from './helene/helene.component';
+import { PraticienDetailsComponent } from './praticien-details/praticien-details.component';
 
 
 @NgModule({
@@ -18,10 +17,8 @@ import {FormsModule} from '@angular/forms';
     AppComponent,
     HomePatientComponent,
 
-
-
-
-
+    HeleneComponent,
+    PraticienDetailsComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule
