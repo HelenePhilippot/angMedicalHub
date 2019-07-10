@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
 import {User} from '../modele/user';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {LoginService} from './login.service';
 
 
 @Injectable({
@@ -10,9 +12,14 @@ export class AuthenticationService implements CanActivate {
 
   private token: User = null;
 
-  constructor(private router: Router) {
+  private httpHeaders: HttpHeaders;
+
+  private httpOptions: any;
+
+  constructor(private router: Router, private loginService: LoginService) {
 
   }
+
 
   canActivate(): boolean {
     if (this.token !== null) {
@@ -23,11 +30,14 @@ export class AuthenticationService implements CanActivate {
   }
 
   public login(user: User) {
-    if (user.login === 'toto' && user.password === 'toto') {
+    this.loginService.login(user).subscribe((res => {
       this.token = user;
-      return true;
-    } else {
-      return false;
-    }
+      console.log('loggé');
+      this.router.navigate(['/home-patient']);
+    }),
+    err => {
+      console.log('pas loggé');
+      this.router.navigate(['/login']);
+    });
   }
 }
