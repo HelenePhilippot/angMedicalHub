@@ -1,8 +1,22 @@
 <div>
-  <table class="table">
 
-    <tr lignePraticien (praticienRefresh)="list()" [praticien]='p' [specialites]='p.specialites'*ngFor="let p of praticiens">
+  <input [(ngModel)]="recherche">&nbsp;
+  <button class="btn btn-warning" (click)="listnom()">Recherche par nom</button>&nbsp;
+  <button class="btn btn-warning" (click)="listville()">Recherche par ville</button>&nbsp;
+  <button class="btn btn-warning" (click)="listspe()">Recherche par spécialité</button><br/>
 
+  <table class="table" border="solid-black">
+
+    <tr>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Spécialités</th>
+      <th>Lieu(x) de consultation</th>
     </tr>
+    <tr lignePraticien (praticienRefresh)="list()" [praticien]='p'
+        *ngFor="let p of praticiens"></tr>
 
   </table>
+</div>
+
+

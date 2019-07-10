@@ -14,12 +14,24 @@ export class PraticienServiceService {
   private httpOptions: any;
 
   constructor(private http: HttpClient) {
-    this.httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
+    this.httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
     this.httpOptions = {headers: this.httpHeaders};
   }
 
   public list(): Observable<any> {
     return this.http.get(this.url, this.httpOptions);
+  }
+
+  public filtreSpecialite(spe: string): Observable<any> {
+    return this.http.get('http://localhost:8080/boot/rest/praticien/rspe/' + spe, this.httpOptions);
+  }
+
+  public filtreVille(spe: string): Observable<any> {
+    return this.http.get('http://localhost:8080/boot/rest/praticien/rville/' + spe, this.httpOptions);
+  }
+
+  public filtreNom(spe: string): Observable<any> {
+    return this.http.get( 'http://localhost:8080/boot/rest/praticien/rnom/' + spe, this.httpOptions);
   }
 }

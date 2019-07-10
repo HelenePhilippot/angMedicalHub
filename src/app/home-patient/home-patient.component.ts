@@ -11,6 +11,8 @@ export class HomePatientComponent implements OnInit {
 
   private praticiens: Praticien[] = [];
 
+  private recherche = '';
+
   constructor(private praticienService: PraticienServiceService) {
   }
 
@@ -21,6 +23,27 @@ export class HomePatientComponent implements OnInit {
 
   public list() {
     this.praticienService.list().subscribe(res => {
+      console.log(res);
+      this.praticiens = res;
+    });
+  }
+
+  public listnom() {
+    this.praticienService.filtreNom(this.recherche).subscribe(res => {
+      console.log(res);
+      this.praticiens = res;
+    });
+  }
+
+  public listville() {
+    this.praticienService.filtreVille(this.recherche).subscribe(res => {
+      console.log(res);
+      this.praticiens = res;
+    });
+  }
+
+  public listspe() {
+    this.praticienService.filtreSpecialite(this.recherche).subscribe(res => {
       console.log(res);
       this.praticiens = res;
     });
