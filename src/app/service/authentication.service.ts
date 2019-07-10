@@ -10,7 +10,7 @@ import {LoginService} from './login.service';
 })
 export class AuthenticationService implements CanActivate {
 
-  private token: User = null;
+  private token: string = null;
 
   private httpHeaders: HttpHeaders;
 
@@ -31,7 +31,7 @@ export class AuthenticationService implements CanActivate {
 
   public login(user: User) {
     this.loginService.login(user).subscribe((res => {
-      this.token = user;
+      this.token = 'admin';
       console.log('loggé');
       this.router.navigate(['/home-patient']);
     }),

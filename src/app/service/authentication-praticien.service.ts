@@ -10,7 +10,7 @@ import {LoginPraticienService} from './login-praticien.service';
 })
 export class AuthenticationPraticienService {
 
-  private token: User = null;
+  private token: string = null;
 
   private httpHeaders: HttpHeaders;
 
@@ -31,9 +31,9 @@ export class AuthenticationPraticienService {
 
   public login(user: User) {
     this.loginPraticienService.login(user).subscribe((res => {
-        this.token = user;
+        this.token = 'praticien';
         console.log('loggé');
-        this.router.navigate(['/home-patient']);
+        this.router.navigate(['/home-praticien']);
       }),
       err => {
         console.log('pas loggé');
