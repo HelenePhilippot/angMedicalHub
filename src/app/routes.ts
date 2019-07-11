@@ -9,7 +9,7 @@ import {HomePageComponent} from './home-page/home-page.component';
 export const routes: Routes = [
   {path: 'homepatient/:username', component: HomePatientComponent},
   // {path: 'homepraticien/:username', component: HomePraticienComponent},
-  {path: 'priserdv/:username/:pratlogin', component: PriseRdvComponent},
+  {path: 'priserdv/:pratlogin', component: PriseRdvComponent},
   {path: 'loginpatient', component: LoginPatientComponent},
   {path: 'loginpraticien', component: LoginPraticienComponent},
   {path: 'homepage', component: HomePageComponent},

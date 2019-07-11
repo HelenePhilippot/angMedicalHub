@@ -217,7 +217,7 @@ export class PatientRdvComponent implements OnInit {
       this.rdv = res;
       this.rdv.patient = this.patient;
     });
-    this.rdvService.update(ident).subscribe(res => {
+    this.rdvService.update(ident, this.rdv).subscribe(res => {
     });
   }
 }

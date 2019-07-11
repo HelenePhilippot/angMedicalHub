@@ -32,7 +32,7 @@ export class RdvService {
     return this.http.delete(`${this.url}/${id}`, this.httpOptions);
   }
 
-  public update(id: number): Observable<any> {
-    return this.http.put('http://localhost:8080/boot/rest/rdv/' + id, this.httpOptions);
+  public update(id: number, rdv: Rdv): Observable<any> {
+    return this.http.put('http://localhost:8080/boot/rest/rdv/' + id, rdv, this.httpOptions);
   }
 }
