@@ -1,5 +1,5 @@
 <div>
-
+{{user}}
   <input [(ngModel)]="recherche">&nbsp;
   <button class="btn btn-warning" (click)="listnom()">Recherche par nom</button>&nbsp;
   <button class="btn btn-warning" (click)="listville()">Recherche par ville</button>&nbsp;
@@ -12,8 +12,9 @@
       <th>Nom</th>
       <th>Spécialités</th>
       <th>Lieu(x) de consultation</th>
+      <th></th>
     </tr>
-    <tr lignePraticien (praticienRefresh)="list()" [praticien]='p'
+    <tr lignePraticien (praticienRefresh)="list()" [praticien]='p' [user]="user"
         *ngFor="let p of praticiens"></tr>
 
   </table>

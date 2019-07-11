@@ -1,12 +1,10 @@
 import {Patient} from './patient';
 import {Praticien} from './praticien';
 import {Motif} from './motif';
-import {CalendarEvent} from './calender-event';
 
+export class CalendarEvent implements CalendarEvent {
 
-export class Rdv implements CalendarEvent {
-
-  constructor(private _id?: number, private _patient?: Patient, private _praticien?: Praticien, private _start?: Date, private _dend?: Date, private _motif?: Motif,_title?: string) {
+  constructor(private _id?: number, private _patient?: Patient, private _praticien?: Praticien, private _start?: Date, private _end?: Date, private _motif?: Motif,_title?: string) {
 
   }
 
@@ -18,13 +16,12 @@ export class Rdv implements CalendarEvent {
     this._start = value;
   }
 
-
-  get dend(): Date {
-    return this._dend;
+  get end(): Date {
+    return this._end;
   }
 
-  set dend(value: Date) {
-    this._dend = value;
+  set end(value: Date) {
+    this._end = value;
   }
 
   get title(): string {

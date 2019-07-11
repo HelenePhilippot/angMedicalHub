@@ -7,7 +7,7 @@ import {PraticienSpecialite} from './praticien-specialite';
 
 export class Praticien extends User {
 
-  constructor(private _prenom?: string, private _nom?: string, private _drdv?: Rdv[], private _praticienSpecialites?: PraticienSpecialite[],
+  constructor(private _prenom?: string, private _nom_praticien?: string, private _drdv?: Rdv[], private _praticienSpecialites?: PraticienSpecialite[],
               private _adresses?: Adresse[], private _motifs?: Motif[]) {
     super();
   }
@@ -21,11 +21,11 @@ export class Praticien extends User {
   }
 
   get nom(): string {
-    return this._nom;
+    return this._nom_praticien;
   }
 
   set nom(value: string) {
-    this._nom = value;
+    this._nom_praticien = value;
   }
 
   get drdv(): Rdv[] {
