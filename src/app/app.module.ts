@@ -24,8 +24,12 @@ import {HomePatientComponent} from './home-patient/home-patient.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import {LoginPatientComponent} from './login-patient/login-patient.component';
 import {LoginPraticienComponent} from './login-praticien/login-praticien.component';
+<<<<<<< HEAD
 import { PatientCalendarComponent } from './patient-calendar/patient-calendar.component';
 import { PatientRdvComponent } from './patient-rdv/patient-rdv.component';
+=======
+import {PatientRdvComponent} from './patient-rdv/patient-rdv.component';
+>>>>>>> 074e560bb878d2a1e9687d79d7e02dd304c9af18
 
 
 
@@ -42,6 +46,7 @@ registerLocaleData(localeFr);
     CalendarTestComponent,
     HomePatientComponent,
     HomePageComponent,
+    PatientRdvComponent,
     LoginPatientComponent,
     LoginPraticienComponent,
     PatientCalendarComponent,
