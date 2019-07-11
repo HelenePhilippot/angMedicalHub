@@ -33,6 +33,7 @@ export class RdvService {
   }
 
   public update(id: number, rdv: Rdv): Observable<any> {
+    this.httpHeaders = new HttpHeaders({'Content-Type': 'application/json;charset=UTF-8', 'Authorization': 'Basic ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password'))});
     return this.http.put('http://localhost:8080/boot/rest/rdv/' + id, rdv, this.httpOptions);
   }
 }

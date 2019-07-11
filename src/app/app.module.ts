@@ -26,6 +26,7 @@ import {LoginPatientComponent} from './login-patient/login-patient.component';
 import {LoginPraticienComponent} from './login-praticien/login-praticien.component';
 import { PatientCalendarComponent } from './patient-calendar/patient-calendar.component';
 import { PatientRdvComponent } from './patient-rdv/patient-rdv.component';
+import {MotifListComponent} from './motif-list/motif-list.component';
 
 
 
@@ -47,7 +48,8 @@ registerLocaleData(localeFr);
     LoginPatientComponent,
     LoginPraticienComponent,
     PatientCalendarComponent,
-    PatientRdvComponent
+    PatientRdvComponent,
+    MotifListComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, BrowserAnimationsModule, NgbModule,

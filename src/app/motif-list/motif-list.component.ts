@@ -27,21 +27,14 @@ export class MotifListComponent implements OnInit {
 
   ngOnInit() {
     this.list();
-    this.aR.params.subscribe(params => {
-      if (params.username) {
-        this.user.login = params.username;
-        console.log(this.user.login);
-
-    });
-
   }
 
   public validermotif() {
-    this.router.navigate(['/validermotif', {username: this.user.login, motif: m}]);
+    this.router.navigate(['/validermotif', {username: sessionStorage.getItem('username'), motif: m}]);
   }
 
   public list() {
-    this.motifService.list(this.praticien.nom_praticien).subscribe(res => {
+    this.motifService.list(this.praticien.nom).subscribe(res => {
       this.motifs = res;
     });
   }

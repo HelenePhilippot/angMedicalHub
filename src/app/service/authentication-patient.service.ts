@@ -25,6 +25,7 @@ export class AuthenticationPatientService {
         this.token = 'patient';
         console.log('loggé');
         sessionStorage.setItem('username', user.login);
+        sessionStorage.setItem('password', user.password)
         this.router.navigate(['/homepatient', user.login]);
       }),
       err => {
