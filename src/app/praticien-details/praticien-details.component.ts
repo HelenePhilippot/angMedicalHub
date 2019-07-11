@@ -30,23 +30,10 @@ private user: User;
     console.log(this.p)
     }
 
-<<<<<<< HEAD
-    this.aR.params.subscribe(params => {
-      if (params.username) {
-        this.user.login = params.username;
-        console.log(this.user.login);
-      } else {
-        console.log('pas de params');
-      }
-    });
-  }
+
 
   public priserdv() {
-    this.router.navigate(['../priserdv', {pratlogin: this.p.nom_praticien}]);
-=======
-  public priserdv(p: Praticien) {
-    this.router.navigate(['/priserdv', p.login]);
->>>>>>> 977b77c21169q0c51c2ba5e99386d3124f2b78f49
+    this.router.navigate(['../priserdv', {pratlogin: this.p.nom}]);
   }
 
 }

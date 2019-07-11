@@ -31,7 +31,7 @@ export class MotifListComponent implements OnInit {
       if (params.username) {
         this.user.login = params.username;
         console.log(this.user.login);
-      }
+
     });
 
   }
@@ -42,7 +42,7 @@ export class MotifListComponent implements OnInit {
 
   public list() {
     this.motifService.list(this.praticien.nom_praticien).subscribe(res => {
-      this.motifs= res;
+      this.motifs = res;
     });
   }
 }
