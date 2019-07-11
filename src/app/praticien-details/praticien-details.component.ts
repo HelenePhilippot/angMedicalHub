@@ -39,7 +39,7 @@ private user: User;
   }
 
   public priserdv() {
-    this.router.navigate(['../priserdv', {username: this.user.login, pratlogin: this.p.login}]);
+    this.router.navigate(['../priserdv', {pratlogin: this.p.nom_praticien}]);
   }
 
 }
