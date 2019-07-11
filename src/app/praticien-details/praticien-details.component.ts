@@ -30,8 +30,10 @@ private user: User;
     console.log(this.p)
     }
 
-  public priserdv(p: Praticien) {
-    this.router.navigate(['/priserdv', p.login]);
+
+
+  public priserdv() {
+    this.router.navigate(['../priserdv', {pratlogin: this.p.nom}]);
   }
 
 }
