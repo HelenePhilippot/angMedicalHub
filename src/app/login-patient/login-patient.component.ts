@@ -3,7 +3,7 @@ import {User} from '../modele/user';
 import {AuthenticationPatientService} from '../service/authentication-patient.service';
 
 @Component({
-  selector: 'app-login-patient',
+  selector: '[login-patient]',
   templateUrl: './login-patient.component.html',
   styleUrls: ['./login-patient.component.css']
 })

@@ -27,7 +27,10 @@ private user: User;
   }
 
   ngOnInit(): void {
+    console.log(this.p)
+    }
 
+<<<<<<< HEAD
     this.aR.params.subscribe(params => {
       if (params.username) {
         this.user.login = params.username;
@@ -40,6 +43,10 @@ private user: User;
 
   public priserdv() {
     this.router.navigate(['../priserdv', {pratlogin: this.p.nom_praticien}]);
+=======
+  public priserdv(p: Praticien) {
+    this.router.navigate(['/priserdv', p.login]);
+>>>>>>> 977b77c21169q0c51c2ba5e99386d3124f2b78f49
   }
 
 }
