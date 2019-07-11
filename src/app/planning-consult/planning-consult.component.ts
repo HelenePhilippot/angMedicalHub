@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Praticien} from '../modele/praticien';
+import {RdvService} from '../service/rdv.service';
+import {Rdv} from '../modele/rdv';
 
 @Component({
   selector: 'app-planning-consult',
@@ -6,21 +9,20 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./planning-consult.component.css']
 })
 export class PlanningConsultComponent implements OnInit {
-  private day: Date;
-  private tabDispo = [];
+  private praticien: Praticien;
+  private drdv: Rdv[] = [];
 
-  constructor() {
+  constructor(private rdvService: RdvService) {
   }
 
   ngOnInit() {
-    this.planning();
+    this.list();
   }
 
-  public planning() {
-    const numbers = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-    for (let i of numbers) {
-      this.tabDispo.push(this.day.setHours(i));
-      return this.tabDispo;
-    }
+  public list() {
+    this.rdvService.list().subscribe(res => {
+      this.drdv = res;
+    });
+
   }
 }

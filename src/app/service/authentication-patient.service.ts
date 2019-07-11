@@ -24,7 +24,7 @@ export class AuthenticationPatientService {
     this.loginPatientService.login(user).subscribe((res => {
         this.token = user;
         console.log('loggé');
-        this.router.navigate(['/home-patient']);
+        this.router.navigate(['/homepatient', user.login]);
       }),
       err => {
         console.log('pas loggé');

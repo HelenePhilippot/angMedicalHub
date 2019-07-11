@@ -33,7 +33,7 @@ export class AuthenticationPraticienService {
     this.loginPraticienService.login(user).subscribe((res => {
         this.token = user;
         console.log('loggé');
-        this.router.navigate(['/home-patient']);
+        this.router.navigate(['/homepraticien']);
       }),
       err => {
         console.log('pas loggé');

@@ -2,6 +2,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Praticien} from '../modele/praticien';
 import {PraticienServiceService} from '../service/praticien-service.service';
 import {Specialite} from '../modele/specialite';
+import {User} from '../modele/user';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -10,7 +12,8 @@ import {Specialite} from '../modele/specialite';
   styleUrls: ['./praticien-details.component.css']
 })
 export class PraticienDetailsComponent implements OnInit {
-
+@Input()
+private user: User;
   @Input('praticien')
   private p: Praticien;
 
@@ -18,12 +21,25 @@ export class PraticienDetailsComponent implements OnInit {
   private ls: Specialite[];
 
   @Output()
-  private praticienRefresh = new EventEmitter();
+  private praticienRefresh = new EventEmitter<string[]>();
 
-  constructor(private praticienService: PraticienServiceService) {
+  constructor(private praticienService: PraticienServiceService, private aR: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
+
+    this.aR.params.subscribe(params => {
+      if (params.username) {
+        this.user.login = params.username;
+        console.log(this.user.login);
+      } else {
+        console.log('pas de params');
+      }
+    });
+  }
+
+  public priserdv() {
+    this.router.navigate(['../priserdv', {username: this.user.login, pratlogin: this.p.login}]);
   }
 
 }

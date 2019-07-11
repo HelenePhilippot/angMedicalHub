@@ -1,6 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {Praticien} from '../modele/praticien';
 import {PraticienServiceService} from '../service/praticien-service.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Patient} from '../modele/patient';
+import {User} from '../modele/user';
 
 @Component({
   selector: 'app-home-patient',
@@ -9,21 +12,27 @@ import {PraticienServiceService} from '../service/praticien-service.service';
 })
 export class HomePatientComponent implements OnInit {
 
+  private user: User;
   private praticiens: Praticien[] = [];
 
   private recherche = '';
 
-  constructor(private praticienService: PraticienServiceService) {
+  constructor(private praticienService: PraticienServiceService, private aR: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
     this.list();
+    this.aR.params.subscribe(params => {
+      if (params.username) {
+        this.user.login = params.username;
+        console.log(this.user.login);
+      }
+    });
 
   }
 
   public list() {
     this.praticienService.list().subscribe(res => {
-      console.log(res);
       this.praticiens = res;
     });
   }

@@ -1,8 +1,6 @@
 <h2>Planning</h2>
-
 <div class="container">
   <table class="table table-bordered">
-    <thead>
     <tr>
       <th>Lundi</th>
       <th>Mardi</th>
@@ -11,16 +9,15 @@
       <th>Vendredi</th>
       <th>Samedi</th>
     </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let i of tabDispo">
-      <td>{{i}}</td>
-      <td>{{i}}</td>
-      <td>{{i}}</td>
-      <td>{{i}}</td>
-      <td>{{i}}</td>
-      <td>{{i}}</td>
+
+    <tr *ngFor="let i of drdv">
+      <td>{{i.dateD}}</td>
+      <td>{{i.dateF}}</td>
+      <td>{{i.motif}}</td>
+      <td>{{i.patient}}</td>
+      <td>{{i.praticien}}</td>
+      <td>{{i.id}}</td>
     </tr>
-    </tbody>
+
   </table>
 </div>

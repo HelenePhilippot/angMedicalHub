@@ -1,10 +1,38 @@
 import {Patient} from './patient';
 import {Praticien} from './praticien';
 import {Motif} from './motif';
+import {CalendarEvent} from './calender-event';
 
-export class Rdv {
-  constructor(private _id?: number, private _patient?: Patient, private _praticien?: Praticien, private _dateD?: Date, private _dateF?: Date, private _motif?: Motif){
 
+export class Rdv implements CalendarEvent {
+
+  constructor(private _id?: number, private _patient?: Patient, private _praticien?: Praticien, private _start?: Date, private _dend?: Date, private _motif?: Motif,_title?: string) {
+
+  }
+
+  get start(): Date {
+    return this._start;
+  }
+
+  set start(value: Date) {
+    this._start = value;
+  }
+
+
+  get dend(): Date {
+    return this._dend;
+  }
+
+  set dend(value: Date) {
+    this._dend = value;
+  }
+
+  get title(): string {
+    return this.title;
+  }
+
+  set title(value: string) {
+    this.title = value;
   }
 
   get id(): number {
@@ -31,21 +59,6 @@ export class Rdv {
     this._praticien = value;
   }
 
-  get dateD(): Date {
-    return this._dateD;
-  }
-
-  set dateD(value: Date) {
-    this._dateD = value;
-  }
-
-  get dateF(): Date {
-    return this._dateF;
-  }
-
-  set dateF(value: Date) {
-    this._dateF = value;
-  }
 
   get motif(): Motif {
     return this._motif;
