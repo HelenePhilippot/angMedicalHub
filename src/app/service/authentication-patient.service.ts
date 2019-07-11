@@ -8,7 +8,7 @@ import {LoginPatientService} from './login-patient.service';
 })
 export class AuthenticationPatientService {
 
-  private token: User = null;
+  private token: string = null;
 
   constructor(private router: Router, private loginPatientService: LoginPatientService) { }
 
@@ -22,7 +22,7 @@ export class AuthenticationPatientService {
 
   public login(user: User) {
     this.loginPatientService.login(user).subscribe((res => {
-        this.token = user;
+        this.token = 'patient';
         console.log('loggé');
         this.router.navigate(['/homepatient', user.login]);
       }),
