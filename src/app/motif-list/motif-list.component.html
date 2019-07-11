@@ -1,20 +1,17 @@
 <div>
 
-  Dr. {{this.praticien.nom_praticien}}
+ <h3> Dr. {{this.nomP}}</h3>
 
-  <table class="table" border="solid-black">
+  <table class="table">
 
     <tr>
-      <th>Nom</th>
-      <th>Nom</th>
-      <th>Spécialités</th>
-      <th>Lieu(x) de consultation</th>
+      <th>Motif</th>
+      <th></th>
     </tr>
-    <ng-container *ngFor="let m of motifs">
+    <tr *ngFor="let m of motifs">
       <td>{{m.libelle}}</td>
-      <td>{{m.duree}}</td>
-      <a class="btn btn-dark" (click)="validermotif()">Prendre Rendez-vous</a>
-    </ng-container>
+      <td><a class="btn btn-success" (click)="validermotif(m)">Choisir</a></td>
+    </tr>
   </table>
 </div>
 

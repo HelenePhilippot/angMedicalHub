@@ -27,13 +27,12 @@ private user: User;
   }
 
   ngOnInit(): void {
-    console.log(this.p)
     }
 
 
-
-  public priserdv() {
-    this.router.navigate(['../priserdv', {pratlogin: this.p.nom}]);
+  public priserdv(prat: Praticien) {
+    localStorage.setItem('praticien', this.p.nom_praticien);
+    this.router.navigate(['/priserdv', localStorage.getItem('praticien')]);
   }
 
 }

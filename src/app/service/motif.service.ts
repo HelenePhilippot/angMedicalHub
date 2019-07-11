@@ -17,9 +17,7 @@ export class MotifService {
     this.httpOptions = {headers: this.httpHeaders};
   }
 
-  public list(username: string): Observable<any> {
-    return this.http.get('http://localhost:8080/boot/rest/motif/motif/' + username, this.httpOptions);
+  public list(): Observable<any> {
+    return this.http.get('http://localhost:8080/boot/rest/motif/praticien', this.httpOptions);
   }
-
-
 }

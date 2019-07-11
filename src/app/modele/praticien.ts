@@ -20,11 +20,12 @@ export class Praticien extends User {
     this._prenom = value;
   }
 
-  get nom(): string {
+
+  get nom_praticien(): string {
     return this._nom_praticien;
   }
 
-  set nom(value: string) {
+  set nom_praticien(value: string) {
     this._nom_praticien = value;
   }
 

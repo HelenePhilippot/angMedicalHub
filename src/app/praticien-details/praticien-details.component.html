@@ -4,6 +4,6 @@
   <td><div *ngFor="let x of p.praticienSpecialite">{{x.key.specialite.specialite}}</div></td>
   <td><div *ngFor="let x of p.adresses">{{x.numero}}&nbsp;{{x.rue}}&nbsp;{{x.cp}}&nbsp;{{x.ville}}</div></td>
   <td>
-  <a class="btn btn-dark" [routerLink]="['/priserdv', p.nom]" routerLinkActive="active">Prendre Rendez-vous</a></td>
+  <a class="btn btn-outline-info" (click)="priserdv(p)">Prendre Rendez-vous</a></td>
 
 

@@ -187,8 +187,7 @@ rdv: Rdv;
   }
 
   public save() {
-    this.rdvService.update(this.rdv).subscribe(res => {;
-    });
+   // this.rdvService.update(this.rdv).subscribe(res => {;});
   }
 }
 

@@ -15,27 +15,45 @@ export class MotifListComponent implements OnInit {
 
 
   private user: User;
-
-  @Input('prat')
+private nomP: string;
   private praticien: Praticien;
-
   private motifs: Motif[] = [];
 
 
-  constructor(private motifService: MotifService, private aR: ActivatedRoute, private router: Router) {
+  // tslint:disable-next-line:max-line-length
+  constructor(private motifService: MotifService, private praticienService: PraticienServiceService, private aR: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
     this.list();
+    this.getPraticien();
   }
 
-  public validermotif() {
-    this.router.navigate(['/validermotif', {username: sessionStorage.getItem('username'), motif: m}]);
+  public getPraticien() {
+    this.praticienService.findAll().subscribe(res => {
+      for (let p of res) {
+        if (p.nom_praticien === localStorage.getItem('praticien')) {
+          this.praticien = p;
+
+        }
+
+      }
+      this.nomP = this.praticien.nom_praticien;
+    });
+  }
+
+  public validermotif(m: Motif) {
+    localStorage.setItem('motif', m.libelle);
+   this.router.navigate(['/validermotif']);
   }
 
   public list() {
-    this.motifService.list(this.praticien.nom).subscribe(res => {
-      this.motifs = res;
+    this.motifService.list().subscribe(res => {
+      for (let m of res) {
+        if (m.praticien.nom_praticien === localStorage.getItem('praticien')) {
+          this.motifs.push(m);
+        }
+      }
     });
   }
 }

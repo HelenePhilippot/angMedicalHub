@@ -1,11 +1,15 @@
-<div>
-{{user}}
+<div class="container-fluid">
+  <br/>
+  <div>
+    <button class="btn-success btn-xlarge" [routerLink]="['/patientcal']" routerLinkActive="active">Consulter mes Rendez-vous</button>
+  </div>
+  <br/>
   <input [(ngModel)]="recherche">&nbsp;
-  <button class="btn btn-warning" (click)="listnom()">Recherche par nom</button>&nbsp;
-  <button class="btn btn-warning" (click)="listville()">Recherche par ville</button>&nbsp;
-  <button class="btn btn-warning" (click)="listspe()">Recherche par spécialité</button><br/>
+  <button class="btn btn-info" (click)="listnom()">Recherche par nom</button>&nbsp;
+  <button class="btn btn-info" (click)="listville()">Recherche par ville</button>&nbsp;
+  <button class="btn btn-info" (click)="listspe()">Recherche par spécialité</button><br/>
 
-  <table class="table" border="solid-black">
+  <table class="table" >
 
     <tr>
       <th>Prénom</th>

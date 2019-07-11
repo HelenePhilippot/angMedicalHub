@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {User} from '../modele/user';
 import {HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {LoginService} from './login.service';
 import {LoginPraticienService} from './login-praticien.service';
 
 @Injectable({
@@ -12,15 +11,9 @@ export class AuthenticationPraticienService {
 
   private token: string = null;
 
-  private httpHeaders: HttpHeaders;
-
-  private httpOptions: any;
-
   constructor(private router: Router, private loginPraticienService: LoginPraticienService) {
 
   }
-
-
   canActivate(): boolean {
     if (this.token !== null) {
       return true;
@@ -33,7 +26,10 @@ export class AuthenticationPraticienService {
     this.loginPraticienService.login(user).subscribe((res => {
         this.token = 'praticien';
         console.log('loggé');
-        this.router.navigate(['/homepraticien']);
+        sessionStorage.setItem('username', user.login);
+        sessionStorage.setItem('password', user.password)
+        console.log('loggé');
+        this.router.navigate(['/homepraticien', user.login]);
       }),
       err => {
         console.log('pas loggé');

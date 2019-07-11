@@ -23,6 +23,13 @@ export class PraticienServiceService {
     return this.http.get(this.url, this.httpOptions);
   }
 
+  public findAll(): Observable<any> {
+    return this.http.get('http://localhost:8080/boot/rest/praticien', this.httpOptions);
+  }
+  public findByUsername(username: string): Observable<any> {
+    return this.http.get('http://localhost:8080/boot/rest/praticien/' + username, this.httpOptions);
+  }
+
   public filtreSpecialite(spe: string): Observable<any> {
     return this.http.get('http://localhost:8080/boot/rest/praticien/rspe/' + spe, this.httpOptions);
   }

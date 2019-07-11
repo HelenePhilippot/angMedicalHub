@@ -22,7 +22,7 @@ export class RdvService {
   }
 
   public list(): Observable<any> {
-    return this.http.get(this.url, {headers: this.httpHeaders});
+    return this.http.get('http://localhost:8080/boot/rest/rdv/infos', {headers: this.httpHeaders});
   }
   public findRdvById(id: number): Observable<any> {
     return this.http.get('http://localhost:8080/boot/rest/rdv/' + id,{headers: this.httpHeaders});
@@ -33,7 +33,13 @@ export class RdvService {
   }
 
   public update(id: number, rdv: Rdv): Observable<any> {
-    this.httpHeaders = new HttpHeaders({'Content-Type': 'application/json;charset=UTF-8', 'Authorization': 'Basic ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password'))});
+    // tslint:disable-next-line:max-line-length
+    this.httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' })
+    this.httpHeaders.append('Accept', 'application/json, text/csv');
+    this.httpHeaders.append('X-Requested-With', 'XMLHttpRequest');
+    this.httpHeaders.append('Access-Control-Allow-Origin', '*');
+    // tslint:disable-next-line:max-line-length
+    this.httpHeaders.append('Authorization', 'Basic ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password')));
     return this.http.put('http://localhost:8080/boot/rest/rdv/' + id, rdv, this.httpOptions);
   }
 }
